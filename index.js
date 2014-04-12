@@ -14,6 +14,8 @@ Console.prototype.newCommand = function() {
   var command = model.del('command');
   var index = model.push('commands', {text: command});
 
+  if (!command) return;
+
   model.set("waitingResult", true);
 
   this.emit('newCommand', command, function(err, result) {
