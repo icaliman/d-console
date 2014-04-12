@@ -1,0 +1,18 @@
+<index:>
+  <div id="d-console" as="container" on-click="selectConsoleInput()">
+    <ul id="console-commands" as="list">
+      {{each commands as #command}}
+        <li class="command">
+          <span class="console-dash">{{@dash}}</span>
+          <span class="command-text">{{#command.text}}</span>
+          <p class="command-result {{if #command.error}}command-error{{/if}}">{{stringify(#command.result)}}</p>
+        </li>
+      {{/each}}
+    </ul>
+    {{if !waitingResult}}
+      <form on-submit="newCommand()">
+        <span class="console-dash console-dash-cursor">{{@dash}}</span>
+        <input as="consoleInput" class="console-input" value="{{command}}" autofocus>
+      </form>
+    {{/if}}
+  </div>
