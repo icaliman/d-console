@@ -4,7 +4,7 @@ d-command-line
 Derby Console component.
 
 # Usage
-[Example usage](http://github.com/icaliman/console)
+[Example usage](https://github.com/icaliman/derby-console)
 
 ## In your template
 ```
