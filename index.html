@@ -12,7 +12,7 @@
     {{if !waitingResult}}
       <form on-submit="newCommand()">
         <span class="console-dash console-dash-cursor">{{@dash}}</span>
-        <input as="consoleInput" class="console-input" value="{{command}}">
+        <input as="consoleInput" class="console-input" value="{{command}}" autofocus>
       </form>
     {{/if}}
   </div>
