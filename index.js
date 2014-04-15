@@ -18,6 +18,7 @@ Console.prototype.newCommand = function() {
 
   model.set("waitingResult", true);
 
+  _this = this;
   this.emit('newCommand', command, function(err, result) {
     if (err) {
       model.set("commands." + (index - 1) + ".error", true);
@@ -26,6 +27,9 @@ Console.prototype.newCommand = function() {
       model.set("commands." + (index - 1) + ".result", result);
     }
     model.set("waitingResult", false);
+    setTimeout(function() {
+      _this.selectConsoleInput();
+    }, 0);
   });
 };
 
