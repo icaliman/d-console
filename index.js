@@ -6,7 +6,7 @@ Console.prototype.view = __dirname;
 
 Console.prototype.create = function(model, dom) {
 //  TODO: save commands list to localStorage
-  model.set('commands', []);
+  model.setNull('commands', []);
 };
 
 Console.prototype.newCommand = function() {
@@ -27,9 +27,7 @@ Console.prototype.newCommand = function() {
       model.set("commands." + (index - 1) + ".result", result);
     }
     model.set("waitingResult", false);
-    setTimeout(function() {
-      _this.selectConsoleInput();
-    }, 0);
+    setTimeout(function() { _this.selectConsoleInput(); }, 0);
   });
 };
 
